@@ -7,7 +7,6 @@
 # server process.
 
 # Basic Site Settings
-# bundle exec jekyll serve -l -H localhost
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Puqi Zhou"
