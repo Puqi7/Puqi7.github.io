@@ -7,13 +7,40 @@ redirect_from:
   - /about.html
 ---
 {% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
-{% assign recent_research = site.publications | sort: "date" | reverse %}
+{% assign selected_publications = site.publications | sort: "date" | reverse %}
 
 I'm a CS PhD student at George Mason University, co-advised by [Sungsoo Ray Hong](http://www.rayhong.net/?i=2) and [David Porfirio](https://dporfirio.github.io/).  
 
 My research spans human-computer interaction, human-robot interaction with an emphasis on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments. With a focus on building scalable, practical multi-agent systems that assist domain experts in dynamic environments.
 
 <!-- You can find my CV here [Puqi's CV]() -->
+
+<section class="home-section">
+  <div class="home-section__head">
+    <h2>Research Interests</h2>
+    <a class="home-section__more" href="/research/">More</a>
+  </div>
+
+  <div class="home-cards">
+    <article class="home-card home-card--research">
+      <p class="home-card__meta">Human-Computer Interaction</p>
+      <h3 class="home-card__title">Interactive sensemaking for high-stakes work</h3>
+      <p class="home-card__excerpt">I study how interactive systems can help people interpret complex information, coordinate attention, and make better decisions in demanding real-world environments.</p>
+    </article>
+
+    <article class="home-card home-card--research">
+      <p class="home-card__meta">Human-Robot Interaction</p>
+      <h3 class="home-card__title">Human collaboration with robotic systems</h3>
+      <p class="home-card__excerpt">My work explores how humans understand, direct, and collaborate with robots, with an emphasis on interfaces that make robot behavior more legible and usable.</p>
+    </article>
+
+    <article class="home-card home-card--research">
+      <p class="home-card__meta">Multi-Agent Systems</p>
+      <h3 class="home-card__title">Scalable AI support for domain experts</h3>
+      <p class="home-card__excerpt">I build practical multi-agent systems that support experts in dynamic settings, especially for multi-robot video analysis and collaborative sensemaking.</p>
+    </article>
+  </div>
+</section>
 
 <section class="home-section">
   <div class="home-section__head">
@@ -40,13 +67,13 @@ My research spans human-computer interaction, human-robot interaction with an em
 
 <section class="home-section">
   <div class="home-section__head">
-    <h2>Research</h2>
+    <h2>Selected Publications</h2>
     <a class="home-section__more" href="/publications/">More</a>
   </div>
 
-  {% if recent_research.size > 0 %}
+  {% if selected_publications.size > 0 %}
     <div class="home-cards">
-      {% for post in recent_research limit: 3 %}
+      {% for post in selected_publications limit: 3 %}
         <article class="home-card">
           <p class="home-card__meta">{{ post.date | date: "%Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</p>
           <h3 class="home-card__title"><a href="{{ post.url | relative_url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h3>
@@ -57,6 +84,6 @@ My research spans human-computer interaction, human-robot interaction with an em
       {% endfor %}
     </div>
   {% else %}
-    <p>Research updates will appear here soon.</p>
+    <p>Selected publications will appear here soon.</p>
   {% endif %}
 </section>
