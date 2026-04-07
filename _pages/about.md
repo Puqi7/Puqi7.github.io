@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 {% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
-{% assign selected_publications = site.publications | sort: "date" | reverse %}
+{% assign all_publications = site.publications | sort: "date" | reverse %}
 
 I'm a CS PhD student at George Mason University, co-advised by [Sungsoo Ray Hong](http://www.rayhong.net/?i=2) and [David Porfirio](https://dporfirio.github.io/).  
 
@@ -16,49 +16,24 @@ My research spans human-computer interaction, human-robot interaction with an em
 <!-- You can find my CV here [Puqi's CV]() -->
 
 <section class="home-section">
-  <div class="home-section__head">
-    <h2>Research Interests</h2>
-    <a class="home-section__more" href="/research/">Detail</a>
-  </div>
-
-  <div class="home-cards">
-    <article class="home-card home-card--research">
-      <p class="home-card__meta">Human-Computer Interaction</p>
-      <h3 class="home-card__title">Interactive sensemaking for high-stakes work</h3>
-      <p class="home-card__excerpt">Sensemaking, decision support, interactive systems</p>
-    </article>
-
-    <article class="home-card home-card--research">
-      <p class="home-card__meta">Human-Robot Interaction</p>
-      <h3 class="home-card__title">Human collaboration with robotic systems</h3>
-      <p class="home-card__excerpt">Robot collaboration, interface design, explainability</p>
-    </article>
-
-    <article class="home-card home-card--research">
-      <p class="home-card__meta">Multi-Agent Systems</p>
-      <h3 class="home-card__title">Scalable AI support for domain experts</h3>
-      <p class="home-card__excerpt">Multi-agent AI, expert workflows, video analysis</p>
-    </article>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__head">
-    <h2>News</h2>
-    <a class="home-section__more" href="/news/">Detail</a>
-  </div>
+  <h2 class="home-section__title">News</h2>
 
   {% if recent_news.size > 0 %}
-    <div class="home-cards">
+    <div class="news-list">
       {% for post in recent_news limit: 3 %}
-        <article class="home-card">
-          <p class="home-card__meta">{{ post.date | date: "%B %d, %Y" }}</p>
-          <h3 class="home-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          {% if post.excerpt %}
-            <p class="home-card__excerpt">{{ post.excerpt | markdownify | strip_html | strip_newlines | truncate: 140 }}</p>
-          {% endif %}
+        <article class="news-row">
+          <p class="news-row__date">{{ post.date | date: "%b %Y" }}</p>
+          <p class="news-row__content">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% if post.excerpt %}
+              <span>{{ post.excerpt | markdownify | strip_html | strip_newlines | truncate: 140 }}</span>
+            {% endif %}
+          </p>
         </article>
       {% endfor %}
+    </div>
+    <div class="home-section__actions">
+      <a class="home-pill-button" href="/news/">Detail</a>
     </div>
   {% else %}
     <p>No news posted yet.</p>
@@ -66,24 +41,71 @@ My research spans human-computer interaction, human-robot interaction with an em
 </section>
 
 <section class="home-section">
-  <div class="home-section__head">
-    <h2>Selected Publications</h2>
-    <a class="home-section__more" href="/publications/">Detail</a>
-  </div>
+  <h2 class="home-section__title">Research</h2>
 
-  {% if selected_publications.size > 0 %}
-    <div class="home-cards">
-      {% for post in selected_publications limit: 3 %}
-        <article class="home-card">
-          <p class="home-card__meta">{{ post.date | date: "%Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</p>
-          <h3 class="home-card__title"><a href="{{ post.url | relative_url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h3>
-          {% if post.excerpt %}
-            <p class="home-card__excerpt">{{ post.excerpt | markdownify | strip_html | strip_newlines | truncate: 160 }}</p>
-          {% endif %}
+  <div class="research-labels">
+    <a class="research-label research-label--blue" href="/research/">Human-Computer Interaction</a>
+    <a class="research-label research-label--gold" href="/research/">Human-Robot Interaction</a>
+    <a class="research-label research-label--purple" href="/research/">Multi-Robot Sensemaking</a>
+    <a class="research-label research-label--green" href="/research/">Multi-Agent Systems</a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2 class="home-section__title">Publications</h2>
+
+  {% if all_publications.size > 0 %}
+    <div class="publication-list">
+      {% for post in all_publications %}
+        <article class="publication-feature">
+          <div class="publication-feature__media">
+            {% if post.header.teaser %}
+              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title | strip_html }}">
+            {% else %}
+              <div class="publication-feature__placeholder">
+                <span>{{ post.date | date: "%Y" }}</span>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="publication-feature__body">
+            <h3 class="publication-feature__title">
+              <a href="{{ post.url | relative_url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+            </h3>
+
+            <p class="publication-feature__meta">
+              {% if post.venue %}[{{ post.venue }} {{ post.date | date: "%Y" }}]{% else %}[{{ post.date | date: "%Y" }}]{% endif %}
+            </p>
+
+            {% if post.excerpt %}
+              <p class="publication-feature__summary">{{ post.excerpt | markdownify | strip_html | strip_newlines | truncate: 220 }}</p>
+            {% endif %}
+
+            <p class="publication-feature__links">
+              <a href="{{ post.url | relative_url }}">Details</a>
+              {% if post.paperurl %}| <a href="{{ post.paperurl }}">Paper</a>{% endif %}
+              {% if post.slidesurl %}| <a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+              {% if post.bibtexurl %}| <a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+            </p>
+
+            <div class="publication-feature__tags">
+              {% if post.category == "conferences" %}
+                <span class="publication-tag publication-tag--purple">Conference</span>
+              {% elsif post.category == "manuscripts" %}
+                <span class="publication-tag publication-tag--gold">Journal</span>
+              {% else %}
+                <span class="publication-tag publication-tag--blue">Publication</span>
+              {% endif %}
+
+              {% if post.venue %}
+                <span class="publication-tag publication-tag--neutral">{{ post.venue }}</span>
+              {% endif %}
+            </div>
+          </div>
         </article>
       {% endfor %}
     </div>
   {% else %}
-    <p>Selected publications will appear here soon.</p>
+    <p>Publications will appear here soon.</p>
   {% endif %}
 </section>
