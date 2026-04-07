@@ -18,26 +18,26 @@ My research spans human-computer interaction, human-robot interaction with an em
 <section class="home-section">
   <div class="home-section__head">
     <h2>Research Interests</h2>
-    <a class="home-section__more" href="/research/">More</a>
+    <a class="home-section__more" href="/research/">Detail</a>
   </div>
 
   <div class="home-cards">
     <article class="home-card home-card--research">
       <p class="home-card__meta">Human-Computer Interaction</p>
       <h3 class="home-card__title">Interactive sensemaking for high-stakes work</h3>
-      <p class="home-card__excerpt">I study how interactive systems can help people interpret complex information, coordinate attention, and make better decisions in demanding real-world environments.</p>
+      <p class="home-card__excerpt">Sensemaking, decision support, interactive systems</p>
     </article>
 
     <article class="home-card home-card--research">
       <p class="home-card__meta">Human-Robot Interaction</p>
       <h3 class="home-card__title">Human collaboration with robotic systems</h3>
-      <p class="home-card__excerpt">My work explores how humans understand, direct, and collaborate with robots, with an emphasis on interfaces that make robot behavior more legible and usable.</p>
+      <p class="home-card__excerpt">Robot collaboration, interface design, explainability</p>
     </article>
 
     <article class="home-card home-card--research">
       <p class="home-card__meta">Multi-Agent Systems</p>
       <h3 class="home-card__title">Scalable AI support for domain experts</h3>
-      <p class="home-card__excerpt">I build practical multi-agent systems that support experts in dynamic settings, especially for multi-robot video analysis and collaborative sensemaking.</p>
+      <p class="home-card__excerpt">Multi-agent AI, expert workflows, video analysis</p>
     </article>
   </div>
 </section>
@@ -45,7 +45,7 @@ My research spans human-computer interaction, human-robot interaction with an em
 <section class="home-section">
   <div class="home-section__head">
     <h2>News</h2>
-    <a class="home-section__more" href="/news/">More</a>
+    <a class="home-section__more" href="/news/">Detail</a>
   </div>
 
   {% if recent_news.size > 0 %}
@@ -68,7 +68,7 @@ My research spans human-computer interaction, human-robot interaction with an em
 <section class="home-section">
   <div class="home-section__head">
     <h2>Selected Publications</h2>
-    <a class="home-section__more" href="/publications/">More</a>
+    <a class="home-section__more" href="/publications/">Detail</a>
   </div>
 
   {% if selected_publications.size > 0 %}
