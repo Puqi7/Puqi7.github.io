@@ -6,14 +6,16 @@ redirect_from:
   - /about/
   - /about.html
 ---
-{% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
-{% assign all_publications = site.publications | sort: "date" | reverse %}
 
 I'm a CS PhD student at George Mason University, co-advised by [Sungsoo Ray Hong](http://www.rayhong.net/?i=2) and [David Porfirio](https://dporfirio.github.io/).  
 
 My research spans human-computer interaction, human-robot interaction with an emphasis on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments. With a focus on building scalable, practical multi-agent systems that assist domain experts in dynamic environments.
 
-<!-- You can find my CV here [Puqi's CV]() -->
+<!--
+{% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
+{% assign all_publications = site.publications | sort: "date" | reverse %}
+
+You can find my CV here [Puqi's CV]()
 
 <section class="home-section">
   <h2 class="home-section__title">News</h2>
@@ -109,3 +111,4 @@ My research spans human-computer interaction, human-robot interaction with an em
     <p>Publications will appear here soon.</p>
   {% endif %}
 </section>
+-->
