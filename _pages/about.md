@@ -11,27 +11,15 @@ I'm a CS PhD student at George Mason University, co-advised by [Sungsoo Ray Hong
 
 My research spans human-computer interaction, human-robot interaction with an emphasis on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments. With a focus on building scalable, practical multi-agent systems that assist domain experts in dynamic environments.
 
-<!--
 {% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
-{% assign all_publications = site.publications | sort: "date" | reverse %}
-
-You can find my CV here [Puqi's CV]()
 
 <section class="home-section">
   <h2 class="home-section__title">News</h2>
 
   {% if recent_news.size > 0 %}
     <div class="news-list">
-      {% for post in recent_news limit: 3 %}
-        <article class="news-row">
-          <p class="news-row__date">{{ post.date | date: "%b %Y" }}</p>
-          <p class="news-row__content">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            {% if post.excerpt %}
-              <span>{{ post.excerpt | markdownify | strip_html | strip_newlines | truncate: 140 }}</span>
-            {% endif %}
-          </p>
-        </article>
+      {% for post in recent_news limit: 5 %}
+        {% include news-row.html post=post %}
       {% endfor %}
     </div>
     <div class="home-section__actions">
@@ -41,6 +29,9 @@ You can find my CV here [Puqi's CV]()
     <p>No news posted yet.</p>
   {% endif %}
 </section>
+
+<!--
+{% assign all_publications = site.publications | sort: "date" | reverse %}
 
 <section class="home-section">
   <h2 class="home-section__title">Research</h2>

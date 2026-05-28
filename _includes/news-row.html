@@ -1,0 +1,19 @@
+<article class="news-row">
+  <p class="news-row__line">
+    <span class="news-row__date">{{ include.post.date | date: "%-m.%-d" }}</span>
+    {% if include.post.news_label %}
+      {% assign label_slug = include.post.news_label | downcase | replace: ' ', '-' %}
+      <span class="news-label news-label--{{ label_slug }}">[{{ include.post.news_label | upcase }}]</span>
+    {% endif %}
+    <span class="news-row__text">
+      {% if include.post.link %}
+        <a href="{{ include.post.link }}">{{ include.post.title | markdownify | strip_html }}</a>
+      {% else %}
+        {{ include.post.title | markdownify | remove: '<p>' | remove: '</p>' }}
+      {% endif %}
+      {% if include.post.excerpt %}
+        <span class="news-row__excerpt">{{ include.post.excerpt | markdownify | strip_html | strip_newlines }}</span>
+      {% endif %}
+    </span>
+  </p>
+</article>
