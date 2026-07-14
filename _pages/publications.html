@@ -6,26 +6,17 @@ author_profile: true
 ---
 {% include base_path %}
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <p class="publication-page__note">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
 {% endif %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+{% assign all_publications = site.publications | sort: "date" | reverse %}
+
+{% if all_publications.size > 0 %}
+  <div class="pub-card-grid pub-card-grid--page">
+    {% for post in all_publications %}
+      {% include publication-row.html post=post %}
     {% endfor %}
-  {% endfor %}
+  </div>
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <p>No publications yet.</p>
 {% endif %}

@@ -1,0 +1,54 @@
+{% assign pub_title = include.post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% assign teaser = include.post.header.teaser | default: include.post.teaser %}
+
+<article class="pub-card">
+  {% if teaser %}
+    <div class="pub-card__figure">
+      <img src="{{ teaser | relative_url }}" alt="{{ pub_title | strip_html }}">
+    </div>
+  {% endif %}
+
+  <h3 class="pub-card__title">
+    <a href="{{ include.post.url | relative_url }}">{{ pub_title }}</a>
+  </h3>
+
+  {% if include.post.authors %}
+    <p class="pub-card__authors">{{ include.post.authors }}</p>
+  {% endif %}
+
+  {% if include.post.venue %}
+    <p class="pub-card__venue">{{ include.post.venue }}</p>
+  {% endif %}
+
+  {% if include.post.excerpt %}
+    <p class="pub-card__abstract">{{ include.post.excerpt | markdownify | strip_html | strip_newlines }}</p>
+  {% endif %}
+
+  <div class="pub-card__links">
+    {% if include.post.paperurl %}
+      <a href="{{ include.post.paperurl }}">DOI</a>
+    {% endif %}
+    {% if include.post.arxivurl %}
+      <a href="{{ include.post.arxivurl }}">arXiv</a>
+    {% endif %}
+    {% if include.post.pdfurl %}
+      <a href="{{ include.post.pdfurl }}">PDF</a>
+    {% endif %}
+    {% if include.post.videourl %}
+      <a href="{{ include.post.videourl }}">Video</a>
+    {% endif %}
+    {% if include.post.projecturl %}
+      <a href="{{ include.post.projecturl }}">Project</a>
+    {% endif %}
+    {% if include.post.slidesurl %}
+      <a href="{{ include.post.slidesurl }}">Slides</a>
+    {% endif %}
+    {% if include.post.codeurl %}
+      <a href="{{ include.post.codeurl }}">Code</a>
+    {% endif %}
+    {% if include.post.bibtexurl %}
+      <a href="{{ include.post.bibtexurl }}">BibTeX</a>
+    {% endif %}
+    <a href="{{ include.post.url | relative_url }}">Details</a>
+  </div>
+</article>

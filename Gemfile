@@ -11,3 +11,9 @@ end
 
 gem 'github-pages'
 gem 'connection_pool', '2.5.0'
+# Ruby 3.4+/4.0 no longer ship these as default gems
+gem 'csv'
+gem 'bigdecimal'
+gem 'base64'
+gem 'logger'
+gem 'mutex_m'

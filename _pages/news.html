@@ -7,8 +7,12 @@ author_profile: true
 
 {% assign news_posts = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
 
-<div class="news-list">
-  {% for post in news_posts %}
-    {% include news-row.html post=post %}
-  {% endfor %}
-</div>
+{% if news_posts.size > 0 %}
+  <div class="news-list news-list--page">
+    {% for post in news_posts %}
+      {% include news-row.html post=post %}
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No news posted yet.</p>
+{% endif %}
