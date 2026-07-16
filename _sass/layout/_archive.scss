@@ -12,8 +12,18 @@
   }
 
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.25 of 12);
+    box-sizing: border-box;
+    clear: none;
+    float: right;
+    margin-right: 0;
+    max-width: none;
+    min-width: 0;
+    padding-left: 1.75rem;
+    width: calc(100% - 11.5rem);
+  }
+
+  @include breakpoint($x-large) {
+    width: calc(100% - 12.5rem);
   }
 
   a {
@@ -473,6 +483,10 @@
   font-family: inherit;
   font-size: 1em;
   margin: 0 0 1.25rem;
+
+  &--footer {
+    margin: 1.75rem 0 0;
+  }
 }
 
 /* Recent / All Publications — adaptive 1–2 column cards */
@@ -529,29 +543,20 @@
 
 .pub-card__title {
   font-family: inherit;
-  font-size: 1.05em;
+  font-size: 1em;
   font-weight: 600;
   line-height: 1.35;
   margin: 0 0 0.45rem;
   overflow-wrap: anywhere;
-
-  a {
-    color: var(--global-text-color);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--global-text-color);
-      text-decoration: none;
-    }
-  }
+  color: var(--global-text-color);
 }
 
 .pub-card__authors {
   color: var(--pub-muted);
   font-family: inherit;
-  font-size: 0.95em;
+  font-size: 0.8em;
   line-height: 1.45;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.45rem;
   overflow-wrap: anywhere;
 
   strong,
@@ -571,19 +576,30 @@
   }
 }
 
+.pub-card__venue-wrap {
+  margin: 0 0 0.5rem;
+}
+
 .pub-card__venue {
+  align-items: center;
+  background: rgba(10, 127, 127, 0.12);
+  border-radius: 999px;
   color: var(--pub-accent);
+  display: inline-flex;
   font-family: inherit;
-  font-size: 1em;
-  font-weight: 600;
-  margin: 0 0 0.45rem;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  white-space: nowrap;
 }
 
 .pub-card__abstract {
   color: var(--global-text-color);
   flex: 1 1 auto;
   font-family: inherit;
-  font-size: 0.95em;
+  font-size: 0.8em;
   line-height: 1.55;
   margin: 0 0 0.75rem;
   overflow-wrap: anywhere;
@@ -604,12 +620,12 @@
     color: var(--pub-accent);
     display: inline-flex;
     font-family: inherit;
-    font-size: 0.85em;
+    font-size: 0.75em;
     font-weight: 600;
     gap: 0.35rem;
     line-height: 1.1;
-    min-height: 1.75rem;
-    padding: 0.4rem 0.7rem;
+    min-height: 1.65rem;
+    padding: 0.35rem 0.65rem;
     text-decoration: none;
     white-space: nowrap;
 
@@ -621,9 +637,28 @@
   }
 }
 
+/* beat .page__content p / heading defaults on the homepage cards */
+.page__content .pub-card {
+  h3.pub-card__title {
+    font-size: 1em;
+    margin-top: 0;
+  }
+
+  p.pub-card__authors,
+  p.pub-card__abstract {
+    font-size: 0.8em;
+  }
+
+  p.pub-card__venue-wrap {
+    font-size: 1em;
+  }
+}
+
 .page .pub-card-grid,
 .archive .pub-card-grid,
 .page .news-list,
 .archive .news-list {
   clear: both;
 }
+
+

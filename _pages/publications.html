@@ -3,11 +3,9 @@ layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
+show_title: false
 ---
 {% include base_path %}
-{% if site.author.googlescholar %}
-  <p class="publication-page__note">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
-{% endif %}
 
 {% assign all_publications = site.publications | sort: "date" | reverse %}
 
@@ -19,4 +17,8 @@ author_profile: true
   </div>
 {% else %}
   <p>No publications yet.</p>
+{% endif %}
+
+{% if site.author.googlescholar %}
+  <p class="publication-page__note publication-page__note--footer">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
 {% endif %}

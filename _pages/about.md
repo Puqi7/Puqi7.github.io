@@ -9,7 +9,7 @@ redirect_from:
 
 I'm a CS PhD student at George Mason University, co-advised by [David Porfirio](https://dporfirio.github.io/) and [Sungsoo Ray Hong](http://www.rayhong.net/?i=2).  
 
-My research spans human-computer interaction, human-robot interaction with an emphasis on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments around human attenion.
+My research spans human-computer interaction, human-robot interaction with a focus on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments around human attenion.
 
 {% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
 

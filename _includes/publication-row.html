@@ -8,16 +8,16 @@
     </div>
   {% endif %}
 
-  <h3 class="pub-card__title">
-    <a href="{{ include.post.url | relative_url }}">{{ pub_title }}</a>
-  </h3>
+  <h3 class="pub-card__title">{{ pub_title }}</h3>
 
   {% if include.post.authors %}
     <p class="pub-card__authors">{{ include.post.authors }}</p>
   {% endif %}
 
   {% if include.post.venue %}
-    <p class="pub-card__venue">{{ include.post.venue }}</p>
+    <p class="pub-card__venue-wrap">
+      <span class="pub-card__venue">{{ include.post.venue }}</span>
+    </p>
   {% endif %}
 
   {% if include.post.excerpt %}
@@ -49,6 +49,5 @@
     {% if include.post.bibtexurl %}
       <a href="{{ include.post.bibtexurl }}">BibTeX</a>
     {% endif %}
-    <a href="{{ include.post.url | relative_url }}">Details</a>
   </div>
 </article>

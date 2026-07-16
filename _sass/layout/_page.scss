@@ -18,8 +18,18 @@
 
 .page {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.25 of 12);
+    box-sizing: border-box;
+    clear: none;
+    float: right;
+    margin-right: 0;
+    max-width: none;
+    min-width: 0;
+    padding-left: 1.75rem;
+    width: calc(100% - 11.5rem);
+  }
+
+  @include breakpoint($x-large) {
+    width: calc(100% - 12.5rem);
   }
 
   .page__inner-wrap {
