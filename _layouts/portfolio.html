@@ -31,5 +31,6 @@ layout: compress
       </div>
     </footer>
     {% include analytics.html %}
+    {% if page.is_home %}<script src="{{ '/assets/js/research-interests.js' | relative_url }}" defer></script>{% endif %}
   </body>
 </html>
