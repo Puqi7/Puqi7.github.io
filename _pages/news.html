@@ -1,16 +1,16 @@
 ---
-layout: archive
+layout: portfolio
 title: "News"
 permalink: /news/
-author_profile: true
+author_profile: false
 ---
 
-{% assign news_posts = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
+{% assign news_posts = site.posts | where: 'published', true | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
 
 {% if news_posts.size > 0 %}
   <div class="news-list news-list--page">
     {% for post in news_posts %}
-      {% include news-row.html post=post %}
+      {% include news-entry.html post=post %}
     {% endfor %}
   </div>
 {% else %}

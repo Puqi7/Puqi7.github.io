@@ -1,0 +1,4 @@
+# Add only the owner's real photos; an empty list renders no placeholder.
+# Gallery fields: published (true), name, image, width, height, alt, caption.
+# Optional transparent header image: cutout, cutout_width, cutout_height.
+[]

@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Puqi Zhou"
 title_separator          : "-"
 name                     : &name "Puqi Zhou"
-description              : &description "Puqi Zhou's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Puqi Zhou is a Ph.D. researcher at George Mason University working on human-centered robotics, human-robot interaction, shared autonomy, multi-robot systems, and human attention modeling."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://Puqi7.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -27,7 +27,7 @@ author:
   name             : "Puqi Zhou"
   pronouns         : # example: "she/her"  
   bio              : ""
-  location         : "fairfax,VA,USA"
+  location         : "Fairfax, VA, USA"
   employer         : "George Mason University"
   uri              : # URL
   email            : "pzhou@gmu.edu" 
@@ -143,7 +143,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
+og_image                 : "profile-800.webp" # Social media default site image
 og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -187,6 +187,10 @@ exclude:
   - local
   - log
   - node_modules
+  - scripts
+  - docs
+  - tests
+  - CONTRIBUTING.md
   - package.json*
   - Rakefile
   - README
@@ -242,6 +246,7 @@ defaults:
       path: ""
       type: posts
     values:
+      published: false # Enable public news explicitly.
       layout: single
       author_profile: true
       read_time: true
@@ -269,6 +274,7 @@ defaults:
       path: ""
       type: publications
     values:
+      published: false # Enable public publications explicitly.
       layout: single
       author_profile: true
       share: true
@@ -359,3 +365,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# General direction status only; never include identifying project details.
+show_direction_review_status: true

@@ -41,3 +41,16 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* Keep archived pages readable and honor the portfolio's motion preference. */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--global-link-color);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

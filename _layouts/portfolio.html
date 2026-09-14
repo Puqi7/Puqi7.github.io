@@ -1,0 +1,35 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+    <meta name="theme-color" content="#fdfdfb">
+  </head>
+  <body class="research-portfolio">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="site-name" href="{{ '/' | relative_url }}">Puqi Zhou</a>
+      {% include header-pets.html %}
+      <nav aria-label="Main navigation">
+        {% for link in site.data.navigation.main %}
+        <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+    </header>
+    <main id="main" class="shell{% unless page.is_home %} inner-page{% endunless %}" tabindex="-1">
+      {% unless page.is_home %}<h1 class="page-title">{{ page.title }}</h1>{% endunless %}
+      {{ content }}
+    </main>
+    <footer class="site-footer shell">
+      <div><strong>Puqi Zhou</strong><p>Human-Centered Robotics · George Mason University</p></div>
+      <div class="footer-links">
+        {% include profile-links.html footer=true %}
+        <a href="{{ '/news/' | relative_url }}">News and updates</a>
+      </div>
+    </footer>
+    {% include analytics.html %}
+  </body>
+</html>

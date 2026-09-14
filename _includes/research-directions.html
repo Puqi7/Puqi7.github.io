@@ -1,0 +1,49 @@
+{% assign public_publications = site.publications | where: 'published', true %}
+<ol class="research-arc" aria-label="Research approach">
+  {% for direction in site.data.research_directions %}
+  <li>
+    <details class="direction">
+      <summary>
+        <span class="direction-step">{{ direction.step | escape }}</span>
+        <span class="direction-topic">{{ direction.topic | escape }}</span>
+        <span class="direction-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="direction-body">
+        {% for work in direction.public_work %}
+          {% assign publication = public_publications | where: 'url', work.publication | first %}
+          {% if publication %}
+          {% capture publication_destination %}{% include publication-destination.html post=publication %}{% endcapture %}
+          <article class="direction-work direction-work--public">
+            <h3><a href="{{ publication_destination }}">{{ work.label | default: publication.title | escape }}</a></h3>
+            <p class="direction-venue">{{ publication.venue | escape }}</p>
+            <p>{{ work.description | escape }}</p>
+          </article>
+          {% endif %}
+        {% endfor %}
+        {% for work in direction.review_work %}
+        <div class="direction-work direction-work--review">
+          {% if site.show_direction_review_status %}<span class="direction-status">Under review</span>{% endif %}
+          <p>{{ work.description | escape }}</p>
+        </div>
+        {% endfor %}
+        {% if direction.earlier_work %}
+        <div class="direction-earlier">
+          <p class="direction-earlier-label">Earlier work</p>
+          {% for work in direction.earlier_work %}
+            {% assign publication = public_publications | where: 'url', work.publication | first %}
+            {% if publication %}
+            {% capture publication_destination %}{% include publication-destination.html post=publication %}{% endcapture %}
+            <article class="direction-work direction-work--earlier">
+              <h3><a href="{{ publication_destination }}">{{ work.label | default: publication.title | escape }}</a></h3>
+              <p class="direction-venue">{{ publication.venue | escape }}</p>
+              <p>{{ work.description | escape }}</p>
+            </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </details>
+  </li>
+  {% endfor %}
+</ol>

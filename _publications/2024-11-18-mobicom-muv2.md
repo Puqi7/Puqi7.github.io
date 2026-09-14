@@ -1,4 +1,10 @@
 ---
+published: true
+teaser_image: /images/research/muv2-teaser.webp
+teaser_width: 640
+teaser_height: 328
+teaser_alt: "MuV2's published architecture diagram connecting the server, edge processing, and multiple video clients."
+selected_order: 4
 title: "MuV2: Scaling up Multi-user Mobile Volumetric Video Streaming via Content Hybridization and Sharing"
 collection: publications
 category: conferences

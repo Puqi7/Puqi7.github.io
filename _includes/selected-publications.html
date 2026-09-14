@@ -1,0 +1,19 @@
+{% assign selected_papers = site.publications | where: 'published', true | where_exp: 'item', 'item.feature_image != nil' | sort: 'selected_order' %}
+<div class="project-grid">
+  {% for paper in selected_papers %}
+  {% capture publication_destination %}{% include publication-destination.html post=paper %}{% endcapture %}
+  <article class="project" aria-labelledby="paper-{{ paper.selected_order }}">
+    <a class="project-image" href="{{ publication_destination }}" aria-label="{% if paper.projecturl %}View project{% else %}Read paper{% endif %}: {{ paper.title | escape }}">
+      <img src="{{ paper.feature_image | relative_url }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" alt="{{ paper.image_alt }}" loading="lazy" decoding="async">
+      <span class="project-open" aria-hidden="true">{% if paper.projecturl %}View project{% else %}Read paper{% endif %} <span>↗</span></span>
+    </a>
+    <div class="project-copy">
+      <p class="project-venue">{{ paper.venue }}</p>
+      <h3 id="paper-{{ paper.selected_order }}"><a href="{{ publication_destination }}">{{ paper.title }}</a></h3>
+      <p class="publication-authors">{{ paper.authors }}</p>
+      <p class="project-description">{{ paper.feature_description }}</p>
+      {% include publication-links.html post=paper %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

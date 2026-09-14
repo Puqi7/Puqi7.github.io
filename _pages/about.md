@@ -1,47 +1,45 @@
 ---
+layout: portfolio
+is_home: true
 permalink: /
-# title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+seo_title: "Puqi Zhou | Human-Centered Robotics Researcher"
+description: "Puqi Zhou is a Ph.D. researcher at George Mason University working on human-centered robotics, human-robot interaction, shared autonomy, multi-robot systems, and human attention modeling."
 ---
 
-I'm a CS PhD student at George Mason University, advised by [David Porfirio](https://dporfirio.github.io/).  
-
-My research spans human-computer interaction, human-robot interaction with a focus on building and evaluating interactive multi-robot video sensemaking systems in real-world, high-stakes environments around human attenion.
-
-{% assign recent_news = site.posts | where_exp: "item", "item.date <= site.time" | sort: "date" | reverse %}
-
-<section class="home-section">
-  <h2 class="home-section__title">News</h2>
-
-  {% if recent_news.size > 0 %}
-    <div class="news-list">
-      {% for post in recent_news %}
-        {% include news-row.html post=post %}
-      {% endfor %}
+<section class="hero" aria-labelledby="name">
+  <div class="hero-copy">
+    <h1 id="name">Puqi Zhou</h1>
+    <p class="hero-background">I'm a Computer Science Ph.D. student at George Mason University, advised by <a href="https://dporfirio.github.io/">David Porfirio</a>.</p>
+    <p class="hero-hook">How can robots do more while people stay in control?</p>
+    <p class="hero-intro">My research in <strong>human-centered robotics</strong> combines physical robot systems with studies of human attention and behavior to design autonomy that people can understand and guide.</p>
+    {% include profile-links.html %}
+    <div class="availability">
+      <p><strong>Seeking research internships</strong> · Spring / Summer 2027</p>
     </div>
-  {% else %}
-    <p>No news posted yet.</p>
-  {% endif %}
+  </div>
+  <figure class="portrait">
+    <img src="{{ '/images/profile-800.webp' | relative_url }}" srcset="{{ '/images/profile-480.webp' | relative_url }} 480w, {{ '/images/profile-800.webp' | relative_url }} 800w" sizes="(max-width: 639px) 145px, (max-width: 900px) 34vw, 350px" width="800" height="757" alt="Puqi Zhou outdoors with a small robot on his shoulder." fetchpriority="high">
+  </figure>
 </section>
 
-{% assign all_publications = site.publications | sort: "date" | reverse %}
+<section id="directions" class="home-section" aria-labelledby="directions-title">
+  <div class="section-heading"><h2 id="directions-title"><span>Research Directions</span></h2></div>
+  {% include research-directions.html %}
+</section>
 
-<section class="home-section">
-  <h2 class="home-section__title">Recent Publications</h2>
+{% assign recent_news = site.posts | where: 'published', true | where_exp: 'item', 'item.date <= site.time' | sort: 'date' | reverse %}
+{% if recent_news.size > 0 %}
+<section id="news" class="home-section" aria-labelledby="news-title">
+  <div class="section-heading"><h2 id="news-title"><span>News</span></h2><a href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">→</span></a></div>
+  <div class="news-list">
+    {% for post in recent_news limit:3 %}
+      {% include news-entry.html post=post %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-  {% if all_publications.size > 0 %}
-    <div class="pub-card-grid">
-      {% for post in all_publications limit: 2 %}
-        {% include publication-row.html post=post %}
-      {% endfor %}
-    </div>
-    <p class="home-section__more">
-      <a class="all-pubs-link" href="/publications/">All publications</a>
-    </p>
-  {% else %}
-    <p>Publications will appear here soon.</p>
-  {% endif %}
+<section id="publications" class="home-section" aria-labelledby="publications-title">
+  <div class="section-heading"><h2 id="publications-title"><span>Selected Publications</span></h2><a href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a></div>
+  {% include selected-publications.html %}
 </section>

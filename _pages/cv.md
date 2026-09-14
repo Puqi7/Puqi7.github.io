@@ -1,8 +1,8 @@
 ---
-layout: archive
+layout: portfolio
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: false
 redirect_from:
   - /resume
 ---
@@ -10,11 +10,12 @@ redirect_from:
 {% include base_path %}
 
 <iframe
-  src="{{ base_path }}/files/cv.pdf"
+  title="Puqi Zhou’s curriculum vitae"
+  src="{{ '/files/cv.pdf' | relative_url }}"
   width="100%"
   height="1100px"
   style="border: none;"
 >
 </iframe>
 
-If the PDF preview does not load in your browser, open it directly <a href="{{ base_path }}/files/cv.pdf">here</a>.
+If the PDF preview does not load in your browser, open it directly <a href="{{ '/files/cv.pdf' | relative_url }}">here</a>.

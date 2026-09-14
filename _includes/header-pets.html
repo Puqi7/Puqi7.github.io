@@ -1,0 +1,10 @@
+{% assign header_pets = site.data.pets | where: 'published', true | where_exp: 'pet', 'pet.cutout != nil' %}
+{% if header_pets.size > 0 %}
+<div class="header-pets" aria-label="My pets">
+  {% for pet in header_pets %}
+  <a href="{{ '/about/#pets' | relative_url }}" aria-label="Meet {{ pet.name | escape }}">
+    <img src="{{ pet.cutout | relative_url }}" width="{{ pet.cutout_width }}" height="{{ pet.cutout_height }}" alt="{{ pet.name | escape }}" decoding="async">
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,14 @@
+{% assign pets = site.data.pets | where: 'published', true %}
+{% if pets.size > 0 %}
+<section id="pets" class="home-section" aria-labelledby="pets-title">
+  <div class="section-heading"><h2 id="pets-title"><span>My Pets</span></h2></div>
+  <div class="pets-grid">
+    {% for pet in pets %}
+    <figure class="pet">
+      <img src="{{ pet.image | relative_url }}" width="{{ pet.width }}" height="{{ pet.height }}" alt="{{ pet.alt | escape }}" loading="lazy" decoding="async">
+      <figcaption><strong>{{ pet.name | escape }}</strong>{% if pet.caption %}{{ pet.caption | escape }}{% endif %}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

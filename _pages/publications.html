@@ -1,23 +1,28 @@
 ---
-layout: archive
-title: "Publications"
+layout: portfolio
+title: "Research Directions"
+seo_title: "Research & Publications | Puqi Zhou"
 permalink: /publications/
-author_profile: true
-show_title: false
+author_profile: false
 ---
-{% include base_path %}
 
-{% assign all_publications = site.publications | sort: "date" | reverse %}
+{% include research-directions.html %}
+
+<section class="home-section" aria-labelledby="all-publications-title">
+  <div class="section-heading"><h2 id="all-publications-title"><span>All Publications</span></h2></div>
+
+{% assign all_publications = site.publications | where: 'published', true | sort: "date" | reverse %}
 
 {% if all_publications.size > 0 %}
-  <div class="pub-card-grid pub-card-grid--page">
+  <div class="publication-list">
     {% for post in all_publications %}
-      {% include publication-row.html post=post %}
+      {% include publication-entry.html post=post %}
     {% endfor %}
   </div>
 {% else %}
   <p>No publications yet.</p>
 {% endif %}
+</section>
 
 {% if site.author.googlescholar %}
   <p class="publication-page__note publication-page__note--footer">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>

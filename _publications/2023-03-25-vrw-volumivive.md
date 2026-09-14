@@ -1,4 +1,9 @@
 ---
+published: true
+teaser_image: /images/research/volumivive-teaser.webp
+teaser_width: 641
+teaser_height: 304
+teaser_alt: "Volumivive's published authoring and interaction interfaces for adding interactive areas to volumetric video."
 title: "Volumivive: An Authoring System for Adding Interactivity to Volumetric Video"
 collection: publications
 category: conferences

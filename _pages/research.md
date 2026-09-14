@@ -1,17 +1,17 @@
 ---
-layout: archive
-title: "Research"
+layout: null
 permalink: /research/
-author_profile: true
+sitemap: false
 ---
-
-## Research Interests
-
-### Interactive Sensemaking
-I study how people interpret complex information through interactive systems, with a focus on supporting fast, reliable reasoning in high-stakes environments.
-
-### Human-Robot Interaction
-My research examines how people coordinate with robotic systems and how interfaces can make robot activity more understandable, usable, and trustworthy.
-
-### Multi-Agent Systems for Experts
-I build scalable, practical AI systems that help domain experts work with multi-robot video and other dynamic data sources in real-world settings.
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="0; url={{ '/publications/' | relative_url }}">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{ '/publications/' | absolute_url }}">
+    <title>Research and Publications | Puqi Zhou</title>
+  </head>
+  <body><p><a href="{{ '/publications/' | relative_url }}">Continue to research and publications.</a></p></body>
+</html>

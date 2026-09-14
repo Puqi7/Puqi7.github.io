@@ -1,0 +1,15 @@
+<article class="publication-entry">
+  {% capture publication_destination %}{% include publication-destination.html post=include.post %}{% endcapture %}
+  {% assign teaser = include.post.teaser_image | default: include.post.feature_image %}
+  {% if teaser %}
+  <a class="publication-teaser" href="{{ publication_destination }}" aria-label="{% if include.post.projecturl %}View project{% else %}Read paper{% endif %}: {{ include.post.title | escape }}">
+    <img src="{{ teaser | relative_url }}" width="{{ include.post.teaser_width | default: include.post.image_width }}" height="{{ include.post.teaser_height | default: include.post.image_height }}" alt="{{ include.post.teaser_alt | default: include.post.image_alt | escape }}" loading="lazy" decoding="async">
+  </a>
+  {% endif %}
+  <div class="publication-copy">
+    <p class="publication-venue">{{ include.post.venue }}</p>
+    <h3><a href="{{ publication_destination }}">{{ include.post.title }}</a></h3>
+    <p class="publication-authors">{{ include.post.authors }}</p>
+    {% include publication-links.html post=include.post %}
+  </div>
+</article>

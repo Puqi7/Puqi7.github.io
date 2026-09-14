@@ -1,0 +1,9 @@
+<div class="publication-links">
+  {% if include.post.pdfurl %}<a href="{{ include.post.pdfurl }}">Paper</a>{% elsif include.post.arxivurl %}<a href="{{ include.post.arxivurl }}">Paper</a>{% endif %}
+  {% if include.post.paperurl and include.post.doi_available != false %}<a href="{{ include.post.paperurl }}">DOI</a>{% endif %}
+  {% if include.post.projecturl %}<a href="{{ include.post.projecturl }}">Project</a>{% endif %}
+  {% if include.post.videourl %}<a href="{{ include.post.videourl }}">Video</a>{% endif %}
+  {% if include.post.codeurl %}<a href="{{ include.post.codeurl }}">Code</a>{% endif %}
+  {% if include.post.slidesurl %}<a href="{{ include.post.slidesurl }}">Slides</a>{% endif %}
+  {% if include.post.bibtexurl %}<a href="{{ include.post.bibtexurl }}">BibTeX</a>{% endif %}
+</div>

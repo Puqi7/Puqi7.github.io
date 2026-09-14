@@ -1,0 +1,33 @@
+- step: "Understand"
+  topic: "Human attention and behavior"
+  public_work:
+    - publication: /publication/2026-uist-attune
+      label: "Attune"
+      description: "Understanding operator attention during multi-robot supervision."
+- step: "Model"
+  topic: "Multimodal human–robot interaction"
+  review_work:
+    - description: "I study models of human attention and behavior during robot supervision."
+  earlier_work:
+    - publication: /publication/2024-mobisys-theia
+      label: "Theia"
+      description: "Gaze and perception in mixed-reality video delivery."
+- step: "Design"
+  topic: "Adaptive interfaces and shared autonomy"
+  review_work:
+    - description: "I study shared autonomy and interfaces that preserve meaningful human control."
+  earlier_work:
+    - publication: /publication/2023-chi-vr-collaborative-learning
+      label: "Collaborative learning in VR"
+      description: "Shared video control for collaborative learning."
+    - publication: /publication/2023-vrw-volumivive
+      label: "Volumivive"
+      description: "Authoring interactive volumetric video."
+- step: "Deploy"
+  topic: "Human–robot teams in real-world workflows"
+  public_work:
+    - publication: /publication/2026-chi-mrvs
+      label: "Multi-robot video sensemaking"
+      description: "Video interfaces designed with public-safety professionals."
+  review_work:
+    - description: "I study multi-robot support for professional teams in complex workflows."

@@ -1,4 +1,5 @@
 ---
+published: true
 title: '1st place presenter, PhD Symposium.'
 date: 2026-02-26
 news_label: AWARDS

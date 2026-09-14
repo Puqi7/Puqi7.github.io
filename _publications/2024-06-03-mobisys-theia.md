@@ -1,4 +1,10 @@
 ---
+published: true
+teaser_image: /images/research/theia-teaser.webp
+teaser_width: 640
+teaser_height: 315
+teaser_alt: "Theia's published system figure showing gaze prediction and foveated volumetric content for a mixed reality headset."
+selected_order: 3
 title: "Theia: Gaze-driven and Perception-aware Volumetric Content Delivery for Mixed Reality Headsets"
 collection: publications
 category: conferences

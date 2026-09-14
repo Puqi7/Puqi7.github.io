@@ -1,0 +1,10 @@
+<article class="news-entry">
+  <div class="news-meta">
+    <time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%b %Y' }}</time>
+    {% if include.post.news_label %}
+      {% assign label_slug = include.post.news_label | slugify %}
+      <span class="news-label news-label--{{ label_slug }}">{{ include.post.news_label | escape }}</span>
+    {% endif %}
+  </div>
+  <p>{{ include.post.home_title | default: include.post.title | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+</article>

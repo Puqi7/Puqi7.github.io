@@ -1,0 +1,11 @@
+{%- if include.post.projecturl -%}
+  {{- include.post.projecturl -}}
+{%- elsif include.post.pdfurl -%}
+  {{- include.post.pdfurl -}}
+{%- elsif include.post.arxivurl -%}
+  {{- include.post.arxivurl -}}
+{%- elsif include.post.paperurl and include.post.doi_available != false -%}
+  {{- include.post.paperurl -}}
+{%- else -%}
+  {{- include.post.url | relative_url -}}
+{%- endif -%}

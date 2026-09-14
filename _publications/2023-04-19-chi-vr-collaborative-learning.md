@@ -1,4 +1,10 @@
 ---
+published: true
+teaser_image: /images/research/collaborative-vr-teaser.webp
+teaser_width: 641
+teaser_height: 311
+teaser_alt: "Published interface views comparing basic, individual-control, and shared-control modes for collaborative VR video learning."
+selected_order: 5
 title: "Collaborative Online Learning with VR Video: Roles of Collaborative Tools and Shared Video Control"
 collection: publications
 category: conferences
