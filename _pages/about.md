@@ -9,6 +9,14 @@ description: "Puqi Zhou is a Ph.D. researcher at George Mason University working
 <section class="hero" aria-labelledby="name">
   <div class="hero-copy">
     <h1 id="name">Puqi Zhou</h1>
+    <ul class="research-interests" aria-label="Research interests">
+      <li class="research-interest--primary">Human–Robot Interaction</li>
+      <li>Multi-Robot Systems</li>
+      <li>Human Attention</li>
+      <li>Shared Autonomy</li>
+      <li>Human–Computer Interaction</li>
+      <li>High-Stakes Applications</li>
+    </ul>
     <p class="hero-background">I'm a Computer Science Ph.D. student at George Mason University, advised by <a href="https://dporfirio.github.io/">David Porfirio</a>.</p>
     <p class="hero-intro">I build and study interactive <strong>multi-robot systems</strong> around <span class="ink-mark">human attention</span>, designing <span class="ink-mark">interfaces</span> and <span class="ink-mark">autonomy</span> for people working with robots in <span class="ink-mark">real-world</span> settings.</p>
     {% include profile-links.html %}
@@ -30,8 +38,8 @@ description: "Puqi Zhou is a Ph.D. researcher at George Mason University working
 {% if recent_news.size > 0 %}
 <section id="news" class="home-section" aria-labelledby="news-title">
   <div class="section-heading"><h2 id="news-title"><span>News</span></h2><a href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">→</span></a></div>
-  <div class="news-list">
-    {% for post in recent_news limit:3 %}
+  <div class="news-list news-scroll" tabindex="0" role="region" aria-label="Scrollable news updates">
+    {% for post in recent_news %}
       {% include news-entry.html post=post %}
     {% endfor %}
   </div>
