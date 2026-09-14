@@ -1,5 +1,6 @@
 - step: "Understand"
   topic: "Human attention and behavior"
+  compact_topic: "Human attention"
   emphasis: [attention]
   public_work:
     - publication: /publication/2026-uist-attune
@@ -7,6 +8,7 @@
       description: "Understanding operator attention during multi-robot supervision."
 - step: "Model"
   topic: "Multimodal human–robot interaction"
+  compact_topic: "Multimodal interaction"
   emphasis: [Multimodal]
   review_work:
     - description: "I study models of human attention and behavior during robot supervision."
@@ -16,6 +18,7 @@
       description: "Gaze and perception in mixed-reality video delivery."
 - step: "Design"
   topic: "Adaptive interfaces and shared autonomy"
+  compact_topic: "Interfaces & autonomy"
   emphasis: [interfaces, autonomy]
   review_work:
     - description: "I study shared autonomy and interfaces that preserve meaningful human control."
@@ -28,6 +31,7 @@
       description: "Authoring interactive volumetric video."
 - step: "Deploy"
   topic: "Human–robot teams in real-world workflows"
+  compact_topic: "Real-world workflows"
   emphasis: [real-world]
   public_work:
     - publication: /publication/2026-chi-mrvs

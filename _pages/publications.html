@@ -1,29 +1,33 @@
 ---
 layout: portfolio
-title: "Research Directions"
+title: "All Publications"
 seo_title: "Research & Publications | Puqi Zhou"
 permalink: /publications/
 author_profile: false
 ---
 
-{% include research-directions.html %}
+<div class="publication-layout">
+  <aside class="publication-directions" aria-labelledby="publication-directions-title">
+    <h2 id="publication-directions-title">Research Directions</h2>
+    {% include research-directions.html compact=true %}
+  </aside>
 
-<section class="home-section" aria-labelledby="all-publications-title">
-  <div class="section-heading"><h2 id="all-publications-title"><span>All Publications</span></h2></div>
+  <section class="publication-archive" aria-labelledby="all-publications-title">
+    <h2 id="all-publications-title" class="visually-hidden">Publication list</h2>
 
-{% assign all_publications = site.publications | where: 'published', true | sort: "date" | reverse %}
+    {% assign all_publications = site.publications | where: 'published', true | sort: "date" | reverse %}
 
-{% if all_publications.size > 0 %}
-  <div class="publication-list">
-    {% for post in all_publications %}
-      {% include publication-entry.html post=post %}
-    {% endfor %}
-  </div>
-{% else %}
-  <p>No publications yet.</p>
-{% endif %}
-</section>
-
-{% if site.author.googlescholar %}
-  <p class="publication-page__note publication-page__note--footer">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
-{% endif %}
+    {% if all_publications.size > 0 %}
+    <div class="publication-list">
+      {% for post in all_publications %}
+        {% include publication-entry.html post=post %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No publications yet.</p>
+    {% endif %}
+    {% if site.author.googlescholar %}
+    <p class="publication-page__note publication-page__note--footer">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
+    {% endif %}
+  </section>
+</div>

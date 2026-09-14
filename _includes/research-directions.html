@@ -1,7 +1,8 @@
 {% assign public_publications = site.publications | where: 'published', true %}
-<ol class="research-arc" aria-label="Research approach">
+<ol class="research-arc{% if include.compact %} research-arc--compact{% endif %}" aria-label="Research approach">
   {% for direction in site.data.research_directions %}
   {% assign direction_topic = direction.topic | escape %}
+  {% if include.compact %}{% assign direction_topic = direction.compact_topic | default: direction.topic | escape %}{% endif %}
   {% for phrase in direction.emphasis %}
     {% assign escaped_phrase = phrase | escape %}
     {% capture marked_phrase %}<span class="ink-mark">{{ escaped_phrase }}</span>{% endcapture %}
