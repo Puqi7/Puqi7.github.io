@@ -10,8 +10,7 @@ description: "Puqi Zhou is a Ph.D. researcher at George Mason University working
   <div class="hero-copy">
     <h1 id="name">Puqi Zhou</h1>
     <p class="hero-background">I'm a Computer Science Ph.D. student at George Mason University, advised by <a href="https://dporfirio.github.io/">David Porfirio</a>.</p>
-    <p class="hero-hook">How can robots do more while people stay in control?</p>
-    <p class="hero-intro">My research in <strong>human-centered robotics</strong> combines physical robot systems with studies of human attention and behavior to design autonomy that people can understand and guide.</p>
+    <p class="hero-intro">I build and study interactive <strong>multi-robot systems</strong> around <span class="ink-mark">human attention</span>, designing <span class="ink-mark">interfaces</span> and <span class="ink-mark">autonomy</span> for people working with robots in <span class="ink-mark">real-world</span> settings.</p>
     {% include profile-links.html %}
     <div class="availability">
       <p><strong>Seeking research internships</strong> · Spring / Summer 2027</p>

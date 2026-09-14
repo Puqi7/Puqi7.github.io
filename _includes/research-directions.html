@@ -1,11 +1,17 @@
 {% assign public_publications = site.publications | where: 'published', true %}
 <ol class="research-arc" aria-label="Research approach">
   {% for direction in site.data.research_directions %}
+  {% assign direction_topic = direction.topic | escape %}
+  {% for phrase in direction.emphasis %}
+    {% assign escaped_phrase = phrase | escape %}
+    {% capture marked_phrase %}<span class="ink-mark">{{ escaped_phrase }}</span>{% endcapture %}
+    {% assign direction_topic = direction_topic | replace: escaped_phrase, marked_phrase %}
+  {% endfor %}
   <li>
     <details class="direction">
       <summary>
         <span class="direction-step">{{ direction.step | escape }}</span>
-        <span class="direction-topic">{{ direction.topic | escape }}</span>
+        <span class="direction-topic">{{ direction_topic }}</span>
         <span class="direction-toggle" aria-hidden="true"></span>
       </summary>
       <div class="direction-body">
