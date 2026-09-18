@@ -16,6 +16,7 @@
         <span class="direction-toggle" aria-hidden="true"></span>
       </summary>
       <div class="direction-body">
+        <p class="direction-description">{{ direction.description | escape }}</p>
         {% for work in direction.public_work %}
           {% assign publication = public_publications | where: 'url', work.publication | first %}
           {% if publication %}
@@ -27,11 +28,12 @@
           </article>
           {% endif %}
         {% endfor %}
-        {% for work in direction.review_work %}
-        <div class="direction-work direction-work--review">
-          {% if site.show_direction_review_status %}<span class="direction-status">Under review</span>{% endif %}
+        {% for work in direction.current_work %}
+        <article class="direction-work direction-work--current">
+          <h3>{{ work.title | escape }}</h3>
+          <span class="direction-status">Current work</span>
           <p>{{ work.description | escape }}</p>
-        </div>
+        </article>
         {% endfor %}
         {% if direction.earlier_work %}
         <div class="direction-earlier">

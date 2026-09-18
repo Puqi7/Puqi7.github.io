@@ -2,5 +2,6 @@
   {% unless include.footer %}<a href="{{ '/cv/' | relative_url }}">CV</a>{% endunless %}
   <a href="{{ site.author.googlescholar }}">Google Scholar</a>
   <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+  {% if site.author.linkedin %}<a href="{{ site.author.linkedin }}">LinkedIn</a>{% endif %}
   <a href="mailto:{{ site.author.email }}">Email</a>
 </div>

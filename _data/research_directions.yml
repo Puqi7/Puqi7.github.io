@@ -1,17 +1,20 @@
 - step: "Understand"
-  topic: "Human attention and behavior"
+  topic: "Human attention in multi-robot supervision"
   compact_topic: "Human attention"
+  description: "Characterize when, where, and why operators shift attention across robots."
   emphasis: [attention]
   public_work:
     - publication: /publication/2026-uist-attune
       label: "Attune"
       description: "Understanding operator attention during multi-robot supervision."
 - step: "Model"
-  topic: "Multimodal human–robot interaction"
-  compact_topic: "Multimodal interaction"
-  emphasis: [Multimodal]
-  review_work:
-    - description: "I study models of human attention and behavior during robot supervision."
+  topic: "Human attention prediction"
+  compact_topic: "Attention prediction"
+  description: "Model how robot motion, visual information, and task context shape attention over time."
+  emphasis: [prediction]
+  current_work:
+    - title: "Predicting Attention in Multi-Robot Supervision"
+      description: "Modeling how robot actions and visual context predict where operators attend."
   earlier_work:
     - publication: /publication/2024-mobisys-theia
       label: "Theia"
@@ -19,9 +22,11 @@
 - step: "Design"
   topic: "Adaptive interfaces and shared autonomy"
   compact_topic: "Interfaces & autonomy"
+  description: "Use models of human state and task context to decide what robots should communicate or handle autonomously."
   emphasis: [interfaces, autonomy]
-  review_work:
-    - description: "I study shared autonomy and interfaces that preserve meaningful human control."
+  current_work:
+    - title: "Shared Social Autonomy for Robot Teleoperation"
+      description: "Designing autonomy that handles low-level social behavior while preserving operator control."
   earlier_work:
     - publication: /publication/2023-chi-vr-collaborative-learning
       label: "Collaborative learning in VR"
@@ -32,10 +37,12 @@
 - step: "Deploy"
   topic: "Human–robot teams in real-world workflows"
   compact_topic: "Real-world workflows"
+  description: "Study how multi-robot systems can fit into professional workflows such as public safety and search."
   emphasis: [real-world]
   public_work:
     - publication: /publication/2026-chi-mrvs
       label: "Multi-robot video sensemaking"
       description: "Video interfaces designed with public-safety professionals."
-  review_work:
-    - description: "I study multi-robot support for professional teams in complex workflows."
+  current_work:
+    - title: "Ground Robots for Urban Missing-Person Search"
+      description: "Studying how ground robots can complement professional search teams in urban environments."

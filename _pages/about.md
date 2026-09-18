@@ -14,10 +14,8 @@ description: "Puqi Zhou is a Ph.D. researcher at George Mason University working
         <ul class="research-interests" aria-label="Research interests">
           <li>Human–Robot Interaction</li>
           <li>Multi-Robot Systems</li>
-          <li>Robot Autonomy</li>
-          <li>Human–Computer Interaction</li>
           <li>Human Attention</li>
-          <li>High-Stakes</li>
+          <li>Shared Autonomy</li>
         </ul>
       </div>
     </div>
@@ -25,7 +23,7 @@ description: "Puqi Zhou is a Ph.D. researcher at George Mason University working
       <img src="{{ '/images/profile-800.webp' | relative_url }}" srcset="{{ '/images/profile-480.webp' | relative_url }} 480w, {{ '/images/profile-800.webp' | relative_url }} 800w" sizes="(max-width: 1023px) 124px, (max-width: 1144px) 42vw, 377px" width="800" height="757" alt="Puqi Zhou outdoors with a small robot on his shoulder." fetchpriority="high">
     </figure>
     <p class="hero-background">I'm a Computer Science Ph.D. student at George Mason University, advised by <a href="https://dporfirio.github.io/">David Porfirio</a>.</p>
-    <p class="hero-intro">I build and study interactive <strong>multi-robot systems</strong> around <span class="ink-mark">human attention,</span> designing <span class="ink-mark">interfaces</span> and <span class="ink-mark">autonomy</span> for people working with robots in <span class="ink-mark">real-world</span> settings.</p>
+    <p class="hero-intro">My research focuses on <strong>human-centered multi-robot systems:</strong> I model <span class="ink-mark">human attention</span> and behavior, and use these models to design <span class="ink-mark">adaptive interfaces</span> and <span class="ink-mark">shared autonomy</span> for real-world robot teams.</p>
     {% include profile-links.html %}
     <div class="availability">
       <p><strong>Seeking research internships</strong> · Spring / Summer 2027</p>

@@ -1,0 +1,183 @@
+% Layout inspired by David Porfirio's academic CV:
+% https://dporfirio.github.io/content/CV.pdf
+% Keep this source limited to the owner's public CV information.
+\documentclass[10pt,letterpaper]{article}
+\usepackage[left=0.8in,right=0.8in,top=0.85in,bottom=0.7in,nohead]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[default,light]{sourcesans}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\definecolor{linkblue}{HTML}{194FB1}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  pdftitle={Puqi Zhou — Curriculum Vitae},
+  pdfauthor={Puqi Zhou},
+  pdfsubject={Human-centered multi-robot systems, human attention, and shared autonomy}
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\titleformat{\section}{\large\mdseries\scshape}{}{0pt}{}[\vspace{-3pt}\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\setlist[itemize]{leftmargin=12pt,itemsep=2pt,topsep=4pt,parsep=0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small\color{black!65}Puqi Zhou}
+\fancyfoot[R]{\small\color{black!65}\textit{Curriculum Vitae}, p.\ \textcolor{black}{\thepage}\ of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\footskip}{24pt}
+
+% A flexible description column keeps long titles clear of right-aligned dates.
+\newcommand{\datedline}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}X@{\hspace{12pt}}r@{}}#1 & #2\end{tabularx}\par}
+\newcommand{\position}[4]{%
+  \Needspace{6\baselineskip}%
+  \textbf{#1}\par
+  \datedline{\textit{#2}}{#3}%
+  #4\par}
+\newenvironment{publications}{%
+  \begin{enumerate}[label=\arabic*.,start=1,leftmargin=23pt,labelsep=8pt,itemsep=8pt,topsep=0pt,parsep=0pt]
+  \interlinepenalty=10000
+}{\end{enumerate}}
+
+\begin{document}
+\begin{minipage}[t]{0.54\textwidth}
+  {\Large\bfseries\scshape Puqi Zhou}\par
+  Ph.D.\ Student\par
+  Department of Computer Science\par
+  George Mason University\par
+  Fairfax, VA
+\end{minipage}\hfill
+\begin{minipage}[t]{0.44\textwidth}
+  \raggedleft
+  \textit{Email:} \href{mailto:pzhou@gmu.edu}{\underline{pzhou@gmu.edu}}\par
+  \textit{Website:} \href{https://puqi7.github.io/}{\underline{puqi7.github.io}}\par
+  \href{https://scholar.google.com/citations?user=IMyHqwQAAAAJ}{\underline{Google Scholar}}\par
+  \href{https://github.com/Puqi7}{\underline{GitHub}}\enspace\textperiodcentered\enspace
+  \href{https://www.linkedin.com/in/puqi-zhou-784b35192/}{\underline{LinkedIn}}
+\end{minipage}
+\par\vspace{7pt}
+\textit{Seeking research internships: Spring / Summer 2027}
+
+\section{Research Interests}
+My research focuses on \textbf{\textit{human-centered multi-robot systems}}: I model \textbf{\textit{human attention and behavior}}, and use these models to design \textbf{\textit{adaptive interfaces and shared autonomy}} for real-world robot teams in high-stakes settings.
+
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}p{0.52in}@{\hspace{12pt}}X@{\hspace{12pt}}r@{}}
+  Ph.D. & George Mason University (GMU), Fairfax, VA, USA & 2021--present \\
+  & Computer Science & \\
+  & Advisor: David Porfirio & \\[7pt]
+  B.Eng. & University College Dublin (UCD), Dublin, Ireland & 2017--2021 \\
+  & Beijing University of Technology (BJUT), Beijing, China & \\
+  & Dual degree in Electronic and Information Engineering & \\
+  & Merit Student (Top 5\%); Outstanding Student Cadre (Top 5\%) &
+\end{tabularx}
+
+\section{Research Positions}
+\position{George Mason University}{Ph.D.\ Student, Department of Computer Science}{09/2025--present}{%
+  Human-Centered Multi-Robot Systems\\
+  Advisor: Prof.\ David Porfirio}
+\begin{itemize}
+\item Developed Attune, a self-annotation tool combining robot-camera video, eye tracking, and AI-assisted annotation to characterize operator attention profiles during multi-robot supervision (UIST 2026).
+\item Model how robot motion, visual information, and task context shape human attention over time.
+\item Design adaptive interfaces and shared autonomy that preserve operator control, including social behavior during robot teleoperation.
+\end{itemize}
+\vspace{5pt}
+\position{George Mason University}{Ph.D.\ Student, Department of Computer Science}{08/2023--present}{%
+  Multi-Robot Video Sensemaking\\
+  Project advisors: Profs.\ Sungsoo (Ray) Hong, Chris Thomas, Xuesu Xiao, and Michael Hieb}
+\begin{itemize}
+\item Designed and studied multi-robot ground video sensemaking with public-safety professionals, bringing together multiple video streams, event explanations, and event-review tools (CHI 2026).
+\end{itemize}
+\vspace{5pt}
+\position{University College Dublin}{Research Assistant}{09/2020--07/2021}{%
+  Indoor Wireless Positioning\\
+  Advisor: Prof.\ Xingqi Zhang}
+
+\section{Conference Papers}
+\begin{publications}
+\item \textbf{Zhou, P.}, Hong, S. R., \& Porfirio, D. (2026, November).
+Attune: A Self-Annotation Tool for Understanding Robot Operator Attention Profiles.
+In \textit{Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology (UIST)}.
+\href{https://ari-lab-gmu.github.io/Attune_UIST26/}{[Project]}
+\href{https://ari-lab-gmu.github.io/Attune_UIST26/static/pdfs/paper.pdf}{[Paper]}
+
+\item \textbf{Zhou, P.}, Asgarov, A., Hussain, A., Park, W., Paudyal, A., Shrestha, S., Tang, C.-W., Lighthiser, M. F., Hieb, M. R., Xiao, X., Thomas, C., \& Hong, S. R. (2026, April).
+Designing Multi-Robot Ground Video Sensemaking with Public Safety Professionals.
+In \textit{Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI)}.
+\href{https://puqi7.github.io/MRVS_VideoSensemaking/}{[Project]}
+\href{https://doi.org/10.1145/3772318.3790679}{[Paper]}
+
+\item Liu, Y., \textbf{Zhou, P.}, Zhang, Z., Zhang, A., Han, B., Li, Z., \& Qian, F. (2024, November).
+MuV2: Scaling up Multi-user Mobile Volumetric Video Streaming via Content Hybridization and Sharing.
+In \textit{Proceedings of the 30th ACM Conference on Mobile Computing and Networking (MobiCom)}.
+\href{https://doi.org/10.1145/3636534.3649364}{[Paper]}
+
+\item Wu, N., Liu, K., Cheng, R., Han, B., \& \textbf{Zhou, P.} (2024, June).
+Theia: Gaze-driven and Perception-aware Volumetric Content Delivery for Mixed Reality Headsets.
+In \textit{Proceedings of the 22nd ACM Conference on Mobile Systems, Applications and Services (MobiSys)}.
+\href{https://doi.org/10.1145/3643832.3661858}{[Paper]}
+
+\item Jin, Q., Liu, Y., Sun, R., Chen, C., \textbf{Zhou, P.}, Han, B., Qian, F., \& Yarosh, S. (2023, April).
+Collaborative Online Learning with VR Video: Roles of Collaborative Tools and Shared Video Control.
+In \textit{Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI)}.
+\href{https://doi.org/10.1145/3544548.3581395}{[Paper]}
+
+\item Zhang, D., \textbf{Zhou, P.}, Han, B., \& Pathak, P. H. (2022, November).
+M5: Facilitating Multi-user Volumetric Content Delivery with Multi-lobe Multicast over mmWave.
+In \textit{Proceedings of the 20th ACM Conference on Embedded Networked Sensor Systems (SenSys)}.
+\href{https://doi.org/10.1145/3560905.3568540}{[Paper]}
+\end{publications}
+
+\section{Workshop Papers and Companion Proceedings}
+\begin{publications}
+\item Jin, Q., Liu, Y., \textbf{Zhou, P.}, Han, B., Yarosh, S., \& Qian, F. (2023, March).
+Volumivive: An Authoring System for Adding Interactivity to Volumetric Video.
+In \textit{IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}.
+\href{https://doi.org/10.1109/VRW58643.2023.00127}{[Paper]}
+\end{publications}
+
+\section{Honors and Awards}
+\datedline{Doctoral Research Scholarship, George Mason University}{2026--2027}
+Tier 1\par
+
+\section{Teaching Experience}
+\textbf{George Mason University}\hfill\textit{Teaching Assistant}\par\vspace{3pt}
+\datedline{CS 600, Theory of Computation}{Spring 2026}
+\datedline{CS 551, Computer Graphics}{Fall 2023, Spring 2024, Fall 2025}
+\datedline{CS 695, Immersive Computing}{Spring 2023}
+
+\section{Advising and Mentorship}
+\datedline{Darsh Shetty --- Academy of Engineering and Technology}{2025}
+\datedline{Wonjoon Park --- UMD}{2024--present}
+\datedline{Karthik Nutulapati --- GMU}{2024--2025}
+
+\section{External Service}
+\textbf{Event Organization}\par
+\datedline{ACM SenSys N2Women (Networking Women)}{2022}
+\vspace{4pt}
+\textbf{Referee Service}\par\vspace{3pt}
+\datedline{CHI --- ACM Conference on Human Factors in Computing Systems}{2023, 2025, 2026}
+\datedline{IUI --- ACM Conference on Intelligent User Interfaces}{2026}
+\datedline{CSCW --- ACM Conference on Computer-Supported Cooperative Work \& Social Computing}{2025}
+
+\section{Technical Skills}
+\textbf{Programming:} Python, Java, JavaScript, HTML, CSS, C\#, C, PDDL\par
+\textbf{Robotics and interactive systems:} ROS 2, MuJoCo, OpenCV, Unity\par
+\textbf{Robot platforms:} Hello Robot Stretch 3, Frodo Robot\par
+\textbf{Research methods:} Eye tracking, video annotation, user studies, interaction prototyping\par
+\textbf{Design:} Figma, Affinity
+\end{document}

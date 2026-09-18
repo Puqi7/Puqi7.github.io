@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Audit rendered content, metadata, filenames, and extractable PDF text before publishing.
 
-Usage: python3 scripts/audit_public_site.py _site [--allow-direction-status]
+Usage: python3 scripts/audit_public_site.py _site
 Requires pdftotext or Ghostscript when the output contains PDFs.
 """
 
@@ -41,8 +41,6 @@ def pdf_text(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", default="_site")
-    parser.add_argument("--allow-direction-status", action="store_true",
-                        help="Allow only the owner-approved generic badges on the home/publications pages.")
     args = parser.parse_args()
     root = Path(args.root)
     if not (root / "index.html").exists():
@@ -50,7 +48,6 @@ def main():
     findings = []
     checked = 0
     pdf_count = 0
-    approved_badges = []
     for path in sorted(root.rglob("*")):
         if not path.is_file():
             continue
@@ -60,16 +57,6 @@ def main():
         content = str(relative)
         if path.suffix.lower() in TEXT_EXTENSIONS:
             rendered = html.unescape(path.read_text(errors="replace"))
-            # This exception does not apply to metadata, PDFs, feeds, other pages,
-            # project names, or any other wording about review/submission status.
-            if args.allow_direction_status and relative.as_posix() in {"index.html", "publications/index.html"}:
-                badge = '<span class="direction-status">Under review</span>'
-                count = rendered.count(badge)
-                if count > 3:
-                    findings.append((relative, "unexpected number of direction-status badges"))
-                if count:
-                    rendered = rendered.replace(badge, "")
-                    approved_badges.append((relative, count))
             content += "\n" + rendered
             checked += 1
         elif path.suffix.lower() == ".pdf":
@@ -84,8 +71,6 @@ def main():
             print(f"FAIL {path}: {label}")
         return 1
     print(f"PASS: {checked} public text files, {pdf_count} PDFs, and all asset filenames; no identifying review material found.")
-    for path, count in approved_badges:
-        print(f"Allowed by owner: {count} generic direction-status badges in {path}.")
     return 0
 
 
