@@ -1,0 +1,21 @@
+{
+  "tool": "Built-in image_gen",
+  "mode": "background-extraction",
+  "prompts": [
+    {
+      "key": "tabby",
+      "source": "/Users/pzhou/Downloads/IMG_9159.png",
+      "prompt": "Use case: background-extraction. Edit target: the provided photograph. Asset type: small photographic cat icon for a personal website header. Extract the single brown tabby cat with dark stripes, large round eyes and pale muzzle. Preserve this exact real cat's face shape, eye color, natural expression, fur markings and ear shape. Produce a clean close-up cutout of the head, both complete ears, and a little upper chest fur only. Center the face, occupying about 85% of a square canvas; leave a small transparent margin around the ears and whiskers. Remove the entire background, furniture, other cats, and all objects. Use genuine alpha transparency. Keep photographic texture and original identity, with only subtle exposure correction to make the face readable at 48 pixels high. No cartoon, no illustration, no sticker outline, no circle, no drop shadow, no text, no accessories, no invented body. This is a precise photo cutout, not a redesign of the cat."
+    },
+    {
+      "key": "orange",
+      "source": "/Users/pzhou/Downloads/IMG_9918.png",
+      "prompt": "Use case: background-extraction. Edit target: the provided photograph. Asset type: small photographic cat icon for a personal website header. Extract ONLY the orange-and-white fluffy cat on the laptop in the foreground, NOT the black-and-white cat on the left. Preserve this exact real cat's face shape, eye color, natural expression, fur markings and ear shape. Produce a clean close-up cutout of the head, both complete ears, and a little upper chest fur only. Center the face, occupying about 85% of a square canvas; leave a small transparent margin around the ears and whiskers. Remove the entire background, furniture, other cats, and all objects. Use genuine alpha transparency. Keep photographic texture and original identity, with only subtle exposure correction to make the face readable at 48 pixels high. No cartoon, no illustration, no sticker outline, no circle, no drop shadow, no text, no accessories, no invented body. This is a precise photo cutout, not a redesign of the cat."
+    },
+    {
+      "key": "tuxedo",
+      "source": "/Users/pzhou/Downloads/IMG_1936.JPG",
+      "prompt": "Use case: background-extraction. Edit target: the provided photograph. Asset type: small photographic cat icon for a personal website header. Extract the single black-and-white tuxedo cat with a white nose blaze, pink nose and white chest. Preserve this exact real cat's face shape, eye color, natural expression, fur markings and ear shape. Produce a clean close-up cutout of the head, both complete ears, and a little upper chest fur only. Center the face, occupying about 85% of a square canvas; leave a small transparent margin around the ears and whiskers. Remove the entire background, furniture, other cats, and all objects. Use genuine alpha transparency. Keep photographic texture and original identity, with only subtle exposure correction to make the face readable at 48 pixels high. No cartoon, no illustration, no sticker outline, no circle, no drop shadow, no text, no accessories, no invented body. This is a precise photo cutout, not a redesign of the cat."
+    }
+  ]
+}

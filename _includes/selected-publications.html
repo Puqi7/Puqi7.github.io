@@ -2,17 +2,32 @@
 <div class="project-grid">
   {% for paper in selected_papers %}
   {% capture publication_destination %}{% include publication-destination.html post=paper %}{% endcapture %}
-  <article class="project" aria-labelledby="paper-{{ paper.selected_order }}">
+  <article class="project" aria-labelledby="paper-{{ paper.selected_order }}"{% if paper.demo_preview_id %} data-publication-video data-video-name="{{ paper.demo_name | escape }}"{% endif %}>
+    {% if paper.demo_preview_id %}
+    <div class="project-media">
+      <div class="project-video-stage" data-video-stage>
+        <a class="project-image" data-video-poster data-video-id="{{ paper.demo_preview_id }}" data-video-label="preview" href="https://www.youtube.com/watch?v={{ paper.demo_preview_id }}" aria-label="Watch {{ paper.demo_name }} preview">
+          <img src="{{ paper.feature_image | relative_url }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" alt="{{ paper.image_alt | escape }}" loading="lazy" decoding="async">
+          <span class="project-open" aria-hidden="true"><span>▶</span> Watch preview{% if paper.demo_preview_duration %}<span class="project-duration">{{ paper.demo_preview_duration }}</span>{% endif %}</span>
+        </a>
+      </div>
+      <div class="project-video-tools" data-video-tools hidden>
+        <button type="button" data-close-video>Close video</button>
+        <a data-video-external href="https://www.youtube.com/watch?v={{ paper.demo_preview_id }}" target="_blank" rel="noopener noreferrer">Open on YouTube <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    {% else %}
     <a class="project-image" href="{{ publication_destination }}" aria-label="{% if paper.projecturl %}View project{% else %}Read paper{% endif %}: {{ paper.title | escape }}">
       <img src="{{ paper.feature_image | relative_url }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" alt="{{ paper.image_alt }}" loading="lazy" decoding="async">
       <span class="project-open" aria-hidden="true">{% if paper.projecturl %}View project{% else %}Read paper{% endif %} <span>↗</span></span>
     </a>
+    {% endif %}
     <div class="project-copy">
       <p class="project-venue">{{ paper.venue }}</p>
       <h3 id="paper-{{ paper.selected_order }}"><a href="{{ publication_destination }}">{{ paper.title }}</a></h3>
       <p class="publication-authors">{{ paper.authors }}</p>
       <p class="project-description">{{ paper.feature_description }}</p>
-      {% include publication-links.html post=paper %}
+      {% include publication-links.html post=paper inline_video=true %}
     </div>
   </article>
   {% endfor %}

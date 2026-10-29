@@ -1,0 +1,22 @@
+# Owner-supplied cats. Descriptive labels are not pet names.
+- published: true
+  pose: loaf
+  icon: /images/pets/tabby-loaf.png
+  width: 384
+  height: 256
+  alt: "My tabby cat"
+  replies: ["Mrrp?", "You called?", "Investigating..."]
+- published: true
+  pose: lounge
+  icon: /images/pets/orange-lounge.png
+  width: 384
+  height: 190
+  alt: "My orange-and-white cat"
+  replies: ["Five more minutes.", "Biiig stretch.", "This is my spot."]
+- published: true
+  pose: perch
+  icon: /images/pets/tuxedo-perch.png
+  width: 384
+  height: 256
+  alt: "My black-and-white cat"
+  replies: ["You have my attention.", "One more scratch.", "Back to supervising."]

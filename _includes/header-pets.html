@@ -1,10 +1,14 @@
-{% assign header_pets = site.data.pets | where: 'published', true | where_exp: 'pet', 'pet.cutout != nil' %}
-{% if header_pets.size > 0 %}
-<div class="header-pets" aria-label="My pets">
-  {% for pet in header_pets %}
-  <a href="{{ '/about/#pets' | relative_url }}" aria-label="Meet {{ pet.name | escape }}">
-    <img src="{{ pet.cutout | relative_url }}" width="{{ pet.cutout_width }}" height="{{ pet.cutout_height }}" alt="{{ pet.name | escape }}" decoding="async">
-  </a>
+{% assign header_cats = site.data.header_cats | where: 'published', true %}
+{% if header_cats.size > 0 %}
+<div class="header-pets" role="group" aria-label="Say hello to my three cats" data-header-cats>
+  <span class="cat-shelf-hint" aria-hidden="true">drag &amp; play</span>
+  <span id="cat-controls-help" class="visually-hidden">Press Enter or Space to play with a cat. Use Left and Right arrow keys to move it along the line.</span>
+  {% for cat in header_cats %}
+  <button class="header-pet header-pet--{{ cat.pose }}" type="button" aria-label="Play with {{ cat.alt | downcase | escape }}" aria-describedby="cat-controls-help" data-cat-replies="{{ cat.replies | jsonify | escape }}" title="Drag &amp; play" disabled>
+    <img src="{{ cat.icon | relative_url }}" width="{{ cat.width }}" height="{{ cat.height }}" alt="" draggable="false" decoding="async">
+    {% if cat.pose == 'lounge' %}<span class="cat-snooze" aria-hidden="true">z z z</span>{% endif %}
+  </button>
   {% endfor %}
+  <span class="cat-reaction" role="status" aria-live="polite" aria-atomic="true"></span>
 </div>
 {% endif %}
